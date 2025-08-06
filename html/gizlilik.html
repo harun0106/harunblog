@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikası | Harun Saner Özden Blog</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-brown: #4A3520;
+            --light-brown: #6B4E3A;
+            --cream: #F8F5F0;
+            --copper: #B87333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-brown);
+            background-color: var(--cream);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--dark-brown) 0%, var(--light-brown) 100%);
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        h1 {
+            color: var(--gold);
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+        
+        .blog-identity {
+            color: var(--cream);
+            font-style: italic;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        h2 {
+            color: var(--copper);
+            margin-top: 2.5rem;
+            border-left: 4px solid var(--gold);
+            padding-left: 1rem;
+            transition: all 0.3s ease;
+            font-size: 1.8rem;
+        }
+        
+        h2:hover {
+            transform: translateX(10px);
+            color: var(--gold);
+        }
+        
+        h3 {
+            color: var(--light-brown);
+            margin-top: 1.8rem;
+            font-size: 1.4rem;
+        }
+        
+        .policy-section {
+            background: white;
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .policy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        a {
+            color: var(--copper);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+        
+        ul {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+        
+        li::before {
+            content: '•';
+            color: var(--gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .btn-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-brown);
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background: #C9A227;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--dark-brown);
+        }
+        
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--dark-brown);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem;
+            margin-top: 3rem;
+            background: linear-gradient(135deg, var(--dark-brown) 0%, var(--light-brown) 100%);
+            color: var(--cream);
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--gold);
+        }
+        
+        .footer-links a:hover {
+            color: var(--cream);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animated {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* Scroll animasyonları */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive tasarım */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .policy-section {
+                padding: 1.5rem;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Gizlilik Politikası</h1>
+            <p class="blog-identity animated">Harun Saner Özden | Bilişim Teknolojileri Blogu</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="policy-section animated delay-1 scroll-animation">
+            <h2>Gizlilik Politikası Hakkında</h2>
+            <p>Harun Saner Özden Blogu ("blog", "site" veya "biz") olarak, ziyaretçilerimizin gizliliğine büyük önem vermekteyiz. Bu gizlilik politikası, kişisel bilgilerinizin nasıl toplandığını, kullanıldığını, korunduğunu ve paylaşıldığını açıklamaktadır.</p>
+            
+            <div class="highlight-box">
+                <p>Bu politika, blogumuzu ziyaret ettiğinizde veya hizmetlerimizi kullandığınızda kişisel verilerinizin işlenmesiyle ilgili olarak 25 Ağustos 2025 tarihinden itibaren geçerlidir.</p>
+            </div>
+        </section>
+        
+        <section class="policy-section animated delay-2 scroll-animation">
+            <h2>Toplanan Bilgiler</h2>
+            <p>Blogumuzda aşağıdaki türden bilgileri topluyoruz:</p>
+            
+            <h3>1. Doğrudan Sağladığınız Bilgiler</h3>
+            <ul>
+                <li>Yorum bıraktığınızda adınız ve e-posta adresiniz</li>
+                <li>Bültenimize abone olurken e-posta adresiniz</li>
+                <li>İletişim formu aracılığıyla gönderdiğiniz mesajlar</li>
+                <li>Anketlere veya yarışmalara katılımınız sırasında sağladığınız bilgiler</li>
+            </ul>
+            
+            <h3>2. Otomatik Toplanan Bilgiler</h3>
+            <ul>
+                <li>IP adresiniz ve tarayıcı türü</li>
+                <li>Ziyaret ettiğiniz sayfalar ve ziyaret süreleri</li>
+                <li>Siteye nasıl ulaştığınız (referrer bilgisi)</li>
+                <li>Çerezler ve benzeri izleme teknolojileri aracılığıyla toplanan bilgiler</li>
+            </ul>
+            
+            <h3>3. Üçüncü Parti Kaynaklardan Alınan Bilgiler</h3>
+            <ul>
+                <li>Sosyal medya platformlarından entegrasyon yoluyla alınan bilgiler (örneğin, sosyal medya hesabınızla giriş yaptığınızda)</li>
+                <li>Analiz araçlarından (Google Analytics gibi) alınan anonim istatistiksel veriler</li>
+            </ul>
+        </section>
+        
+        <section class="policy-section animated delay-3 scroll-animation">
+            <h2>Bilgilerin Kullanım Amacı</h2>
+            <p>Topladığımız bilgileri aşağıdaki amaçlarla kullanıyoruz:</p>
+            
+            <ul>
+                <li>Blog içeriğini kişiselleştirmek ve geliştirmek</li>
+                <li>Yorum yönetimi ve spam koruması sağlamak</li>
+                <li>Bülten gönderimi ve duyurular yapmak</li>
+                <li>Site trafiğini analiz etmek ve kullanıcı deneyimini iyileştirmek</li>
+                <li>Güvenlik önlemlerini uygulamak ve yetkisiz erişimi önlemek</li>
+                <li>Yasal yükümlülükleri yerine getirmek</li>
+                <li>Teknik sorunları gidermek ve site performansını optimize etmek</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>Kişisel verileriniz yalnızca bu politikada belirtilen amaçlar doğrultusunda ve yasalara uygun şekilde kullanılacaktır. Verileriniz hiçbir zaman izniniz olmadan üçüncü taraflara satılmayacaktır.</p>
+            </div>
+        </section>
+        
+        <section class="policy-section scroll-animation">
+            <h2>Çerezler ve İzleme Teknolojileri</h2>
+            <p>Blogumuz, kullanıcı deneyimini geliştirmek ve site trafiğini analiz etmek amacıyla çerezler ve benzeri izleme teknolojileri kullanmaktadır.</p>
+            
+            <p>Çerezler hakkında daha detaylı bilgi için lütfen <a href="cerez.html">Çerez Politikası</a> sayfamızı ziyaret edin. Çerez tercihlerinizi tarayıcı ayarlarınızdan yönetebilirsiniz, ancak bu sitenin bazı işlevlerinin düzgün çalışmayabileceğini unutmayın.</p>
+            
+            <div class="btn-container">
+                <a href="cerez.html" class="btn">Çerez Politikasını Görüntüle</a>
+                <a href="index.html" class="btn btn-outline">Ana Sayfaya Dön</a>
+            </div>
+        </section>
+        
+        <section class="policy-section scroll-animation">
+            <h2>Veri Paylaşımı ve Üçüncü Taraflar</h2>
+            <p>Kişisel verileriniz, aşağıdaki durumlar dışında üçüncü taraflarla paylaşılmaz:</p>
+            
+            <ul>
+                <li><strong>Hizmet Sağlayıcılar:</strong> Hosting, e-posta gönderimi, analiz gibi hizmetler için sınırlı erişim verilen güvenilir üçüncü taraflar</li>
+                <li><strong>Yasal Zorunluluklar:</strong> Yasa, mahkeme kararı veya devlet kurumlarının yasal talepleri doğrultusunda</li>
+                <li><strong>İş Transferleri:</strong> Blogun satılması, birleşmesi veya devri durumunda</li>
+                <li><strong>Koruma Amaçlı:</strong> Haklarımızı, mülkiyetimizi veya güvenliğimizi korumak amacıyla</li>
+            </ul>
+            
+            <h3>Kullanılan Üçüncü Parti Hizmetler</h3>
+            <ul>
+                <li><strong>Google Analytics:</strong> Site kullanım istatistikleri için</li>
+                <li><strong>Mailchimp:</strong> E-posta bülteni yönetimi için</li>
+                <li><strong>Akismet:</strong> Yorum spam koruması için</li>
+                <li><strong>Cloudflare:</strong> Site güvenliği ve performansı için</li>
+            </ul>
+        </section>
+        
+        <section class="policy-section scroll-animation">
+            <h2>Veri Güvenliği</h2>
+            <p>Kişisel verilerinizin güvenliği bizim için önemlidir. Verilerinizi yetkisiz erişime, değiştirilmeye, ifşaya veya imhaya karşı korumak için uygun teknik ve organizasyonel önlemleri alıyoruz:</p>
+            
+            <ul>
+                <li>SSL şifreleme kullanıyoruz</li>
+                <li>Düzenli güvenlik denetimleri yapıyoruz</li>
+                <li>Erişim kontrolleri uyguluyoruz</li>
+                <li>Verilerin yedeklerini alıyoruz</li>
+                <li>Personelimizi veri güvenliği konusunda eğitiyoruz</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>İnternet üzerinden veri iletiminin %100 güvenli olmadığını lütfen unutmayın. Verilerinizi korumak için elimizden geleni yapsak da, mutlak güvenlik garanti edemeyiz.</p>
+            </div>
+        </section>
+        
+        <section class="policy-section scroll-animation">
+            <h2>Haklarınız</h2>
+            <p>Kişisel verilerinizle ilgili olarak aşağıdaki haklara sahipsiniz:</p>
+            
+            <ul>
+                <li><strong>Erişim Hakkı:</strong> Hangi verilerinizin işlendiğini öğrenme</li>
+                <li><strong>Düzeltme Hakkı:</strong> Yanlış veya eksik verilerinizi düzeltme</li>
+                <li><strong>Silme Hakkı:</strong> Verilerinizin silinmesini talep etme ("Unutulma Hakkı")</li>
+                <li><strong>Kısıtlama Hakkı:</strong> Verilerinizin işlenmesinin kısıtlanmasını talep etme</li>
+                <li><strong>İtiraz Hakkı:</strong> Verilerinizin işlenmesine itiraz etme</li>
+                <li><strong>Veri Taşınabilirliği:</strong> Verilerinizi yapılandırılmış bir formatta alma</li>
+            </ul>
+            
+            <p>Haklarınızı kullanmak veya gizlilikle ilgili sorularınız için <a href="ilet.html">iletişim formu</a> aracılığıyla bize ulaşabilirsiniz.</p>
+        </section>
+        
+        <section class="policy-section scroll-animation">
+            <h2>Çocukların Gizliliği</h2>
+            <p>Blogumuz 16 yaşın altındaki çocuklar için tasarlanmamıştır ve bilinçli olarak bu yaş grubundan kişisel veri toplamıyoruz. Bir çocuğun bize kişisel veri sağladığını fark edersek, bu verileri derhal silmek için adımlar atarız.</p>
+            
+            <p>Ebeveynler veya vasiler, çocukları hakkında bize sağlanmış olabilecek kişisel veriler hakkında endişeleri varsa lütfen <a href="ilet.html">bizimle iletişime geçin</a>.</p>
+        </section>
+        
+        <section class="policy-section scroll-animation">
+            <h2>Politika Değişiklikleri</h2>
+            <p>Bu gizlilik politikasını zaman zaman güncelleyebiliriz. Değişiklik yapıldığında, bu sayfayı güncelleyerek ve/veya gerekli durumlarda e-posta yoluyla sizi bilgilendirerek revize edilen politikayı duyuracağız.</p>
+            
+            <p>Politikadaki önemli değişiklikler, değişikliğin niteliğine bağlı olarak, etkin olmadan önce size bildirilecektir.</p>
+            
+            <div class="highlight-box">
+                <p><strong>Son güncelleme tarihi:</strong> 25 Ağustos 2025</p>
+                <p>Bu politikanın devam eden kullanımı, değişiklikleri kabul ettiğiniz anlamına gelir.</p>
+            </div>
+        </section>
+        
+        <section class="policy-section scroll-animation">
+            <h2>Bize Ulaşın</h2>
+            <p>Bu gizlilik politikasıyla ilgili herhangi bir sorunuz veya endişeniz varsa, lütfen bizimle iletişime geçmekten çekinmeyin:</p>
+            
+            <div class="btn-container">
+                <a href="ilet.html" class="btn">İletişim Formu</a>
+                <a href="index.html" class="btn btn-outline">Blog Ana Sayfası</a>
+                <a href="cerez.html" class="btn btn-outline">Çerez Politikası</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Harun Saner Özden Blogu. Tüm hakları saklıdır.</p>
+            <p>Ostim Teknik Koleji Bilişim Teknolojileri Öğrencisi | Web & .NET Geliştirici</p>
+            
+            <div class="footer-links">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="ilet.html">İletişim</a>
+                <a href="cerez.html">Çerez Politikası</a>
+                <a href="#">Blog Yazıları</a>
+                <a href="#">Projeler</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animasyonları
+        const scrollElements = document.querySelectorAll('.scroll-animation');
+        
+        const elementInView = (el) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) * 0.75
+            );
+        };
+        
+        const displayScrollElement = (element) => {
+            element.classList.add('visible');
+        };
+        
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+        
+        // Sayfa yüklendiğinde görünür olan elementleri kontrol et
+        document.addEventListener('DOMContentLoaded', () => {
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>
